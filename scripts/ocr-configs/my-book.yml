@@ -1,52 +1,54 @@
-# Settings for scripts/convert-ocr.rb — TEMPLATE
-# Copy this file for a new book (e.g. my-book.yml), then replace every placeholder.
-# See scripts/README.md for the full workflow, and in-nez-perce-country.yml for a filled-in example.
+# Settings for scripts/convert-ocr.rb: The Bannock of Idaho (Brigham D. Madsen, 1958; paperback ed. 1996)
+# See scripts/README.md for the full workflow.
 # Regex values are Ruby regular expressions; keep them in single quotes so backslashes stay literal.
 # All page numbers are PDF page numbers from ocr-pages.rb output, not the numbers printed on the pages.
 
-# Running header printed at the top of each page, as it appears in the OCR text.
-# Use \s* where the OCR inserts stray spaces, e.g. 'In Nez Perce Co\s*un\s*try'.
-running_header: 'BOOK TITLE AS IT APPEARS IN THE HEADER'
+# Even pages carry the book title; odd pages carry the current chapter or appendix title.
+# Both are matched here as one alternation. The OCR sometimes adds a stray "-" or "." before
+# the header, or a period inside a word ("BAN.NOCK").
+running_header: '[-.]?(?:THE BAN\.?NOCK OF IDAHO|PREFACE|CULTURAL HERITAGE|FUR TRADE ERA|OVERLAND TRAVELERS|MORMON MISSION AT LEMHI|THE BATTLE OF BEAR RIVER|TREATY PERIOD, 1863-1869|HUNTING FOR SUBSISTENCE, 1870-1877|THE BANNOCK WAR OF 1878|THE UTAH NORTHERN RIGHT OF WAY|CHIEF RACE HORSE|LAND CESSIONS AND ALLOTMENTS|RESERVATION LIFE|TREATY OF OCTOBER 14, 1863|TREATY OF 1868|AGREEMENT OF 1873|ACT OF MAY 14, 1880|ACT TO ACCEPT AGREEMENT OF 1881|ACT TO RATIFY AGREEMENT OF 1887|ACT TO RATIFY AGREEMENT OF 1900|BIBLIOGRAPHY)'
 
 # Chapters in reading order. `page` is the PDF page the chapter starts on.
 # Each chapter runs until the page before the next one; the last runs to end_page.
-# Output file is NN-slug.md, where NN is the position in this list.
-# Optional per chapter: `order` (default position x 10) and `part` (default "Chapter <position>").
 chapters:
-  - { title: "Chapter One Title", page: 0, slug: chapter-one }
-  - { title: "Chapter Two Title", page: 0, slug: chapter-two }
-  - { title: "Chapter Three Title", page: 0, slug: chapter-three }
-  # Front or back matter can set its own part, e.g.:
-  # - { title: "Preface", page: 0, slug: preface, part: Front Matter }
-  # - { title: "Appendix", page: 0, slug: appendix, part: Appendix }
+  - { title: "Preface to the Paperback Edition", page: 8, slug: preface-paperback, part: Front Matter }
+  - { title: "Biographical Sketch", page: 12, slug: biographical-sketch, part: Front Matter }
+  - { title: "Preface", page: 14, slug: preface, part: Front Matter }
+  - { title: "Cultural Heritage", page: 21, slug: cultural-heritage }
+  - { title: "Fur Trade Era", page: 45, slug: fur-trade-era }
+  - { title: "Overland Travelers", page: 67, slug: overland-travelers }
+  - { title: "Mormon Mission at Lemhi", page: 88, slug: mormon-mission-at-lemhi }
+  - { title: "The Battle of Bear River", page: 115, slug: battle-of-bear-river }
+  - { title: "Treaty Period, 1863–1869", page: 144, slug: treaty-period }
+  - { title: "Hunting for Subsistence, 1870–1877", page: 175, slug: hunting-for-subsistence }
+  - { title: "The Bannock War of 1878", page: 210, slug: bannock-war-of-1878 }
+  - { title: "The Utah Northern Railroad Right of Way", page: 239, slug: utah-northern-right-of-way }
+  - { title: "Chief Race Horse and the State of Wyoming", page: 257, slug: chief-race-horse }
+  - { title: "Land Cessions and Allotments", page: 280, slug: land-cessions-and-allotments }
+  - { title: "Reservation Life", page: 303, slug: reservation-life }
+  - { title: "Unratified Treaty of October 14, 1863", page: 334, slug: appendix-1-treaty-1863, part: Appendices }
+  - { title: "Treaty of 1868", page: 336, slug: appendix-2-treaty-1868, part: Appendices }
+  - { title: "Agreement of 1873", page: 343, slug: appendix-3-agreement-1873, part: Appendices }
+  - { title: "Act of May 14, 1880", page: 346, slug: appendix-4-act-1880, part: Appendices }
+  - { title: "Act to Accept Agreement of 1881", page: 350, slug: appendix-5-agreement-1881, part: Appendices }
+  - { title: "Act to Ratify Agreement of 1887", page: 354, slug: appendix-6-agreement-1887, part: Appendices }
+  - { title: "Act to Ratify Agreement of 1900", page: 363, slug: appendix-7-agreement-1900, part: Appendices }
+  - { title: "Bibliography", page: 371, slug: bibliography, part: Back Matter }
 
-# Last PDF page of content (the page before the index or other back matter you want to skip).
-end_page: 0
+# Last PDF page of content; the index (379-390) is left out.
+end_page: 378
 
-# Pages to skip entirely, e.g. full-page scanned maps, plates, or photos. Leave [] if none.
-skip_pages: []
+# Contents and illustration list (18-20), then full-page illustrations and photo plates.
+skip_pages: [18, 19, 20, 35, 49, 85, 95, 139, 163, 181, 189, 190, 191, 192, 221, 249, 267, 287, 325]
 
-# How footnotes are numbered: per_chapter (restart at 1 each chapter) or continuous (through the whole book).
+# Footnotes restart at 1 in each chapter.
 footnote_numbering: per_chapter
 
-# Book-specific OCR corrections, applied in order to every paragraph and footnote
-# (before the script's general fixes). `replace` may use \1 for capture groups.
-# Add entries after the first run, once you see which errors repeat.
-text_fixes: []
-  # - { find: '\btbe\b', replace: 'the' }        # example: "tbe" -> "the"
-  # - { find: 'l(?=daho)', replace: 'I' }        # example: "ldaho" -> "Idaho"
+# Book-specific OCR corrections, applied in order to every paragraph and footnote.
+text_fixes:
+  - { find: 'Biographiual Sketuh', replace: 'Biographical Sketch' }
+  - { find: 'Pref ace', replace: 'Preface' }
+  - { find: 'ofJesus', replace: 'of Jesus' }
 
 # Words the split-word rejoiner must never create (check joins.txt after each run).
 keep_apart: []
-  # - percent
-
-# Optional: paragraphs that open a quoted primary-source section. Group 1 becomes an ### heading,
-# group 2 an italic description; text after `source_label` becomes a **Source:** line, and the
-# following paragraphs are blockquoted. Uncomment and adapt only if the book has labelled excerpts.
-# quoted_sections:
-#   pattern: '\A(Account \d+\.\d+[a-z]?):\s*(.*)\z'
-#   source_label: 'Source:'
-
-# Optional: paragraph that starts a further-reading list. Group 1 becomes an #### heading;
-# following short paragraphs containing a year become list items. Uncomment and adapt if needed.
-# reading_list_pattern: '\A((?:Further reading|More information) (?:about|on) [^:]+):\s*(.*)\z'
