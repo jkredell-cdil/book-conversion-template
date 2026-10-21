@@ -1,7 +1,7 @@
 ---
 title: "Reservation Life"
 order: 150
-part: Chapter 15
+part: Chapter 12
 ---
 
 THE time from 1871 to 1887 has been characterized as the "Reservation Period" in the policy of the United States government toward the Indians. The dominant features of these years were settlement on reservations, endeavor by the agents to exercise complete control, and issuance of rations in order to provide subsistence and keep the Indians quiet. For the Bannock, this period could well be extended to 1900, because the tardy development of irrigation facilities at Fort Hall ·precluded the assignment of farming allotments to many families. Bannock reluctance to engage in farming proved to be an additional deterrent to their adaptation to a civilized life.[^1]
