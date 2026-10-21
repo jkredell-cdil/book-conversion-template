@@ -1,7 +1,7 @@
 ---
 title: "Mormon Mission at Lemhi"
 order: 70
-part: Chapter 7
+part: Chapter 4
 ---
 
 T HE American Indian has always been of significant interest to the Church of Jesus Christ of Latter-day Saints. Through its prophet, Joseph Smith, the church received the Book of Mormon, accepted as a record of a branch of the house of Israel which fled from Jerusalem about 600 n.c. and finally found a home in the western portion of the Americas.[^1] The natives of the Western Hemisphere, according to this ancient narrative, were thus literal descendants of the Israelites. In September, 1830, a revelation announced by Joseph Smith gave the Saints a direct obligation to carry the message of the Book of Mormon to the Indians.2 The first missionaries to carry out these instructions left New York State in October, 1830, and eventually preached Mormon doctrine to the Wyandots in Ohio and to the Delaware Nation in Missouri.3 Missions were sent to other tribes in the Mississippi region during the following years; and, after the removal of the church to Utah, the work was taken up among the natives of the Great Basin.

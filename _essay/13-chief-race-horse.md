@@ -1,7 +1,7 @@
 ---
 title: "Chief Race Horse and the State of Wyoming"
 order: 130
-part: Chapter 13
+part: Chapter 10
 ---
 
 FROM their earliest meeting with. the whites to the turn of the century in 1900, the Bannock held the reputation of being warlike and untameable. Through the years their massacres and depredations, their horse-stealing raids, with the war of 1878 as a climax, had convinced the citizens of Idaho and neighboring states that rumors of Bannock warriors on ·the trail should be heeded until proved false. After the outbreak in 1878, the Bannock never again took ·to the warpath in substantial numbers, but their reputation and occasional threats led to many "scares," at least in newspaper headlines. The Bannock would have concurred with a statement attributed to a Paiute Indian:

@@ -1,7 +1,7 @@
 ---
 title: "Hunting for Subsistence, 1870–1877"
 order: 100
-part: Chapter 10
+part: Chapter 7
 ---
 
 W ITH the movement of Agent Powell and the Boise and Bruneau Shoshoni to Fort Hall in 1869, the reservation began its active life as an agency. At this time President Ulysses S. Grant was interested in improving the Indian Office and in reducing the number of unscrupulous agents who had become entrenched in the service. For this reason he delegated the nomination of the agents to the religious organizations interested in Indian welfare. The Quakers, therefore, were given the selection of agents in the Plains areas. The other agencies, except those in Oregon, were manned by army officers. In Idaho Territory, Colonel L. DeFloyd Jones became the Superintendent of Indian Affairs, and First Lieutenant W. H. Danilson was appointed to command the Fort Hall Agency. Their tenure was short-lived, however, because the Army Appropriation Act of July 15, 1870, provided that any officer on the active list who accepted a civil appointment must first give up his commission. The nomination of agents for those posts so vacated was then divided among the several religious bodies. The agent-at Fort Hall was nominated by the Methodist missionary organization but; by the early l 880's, the policy of nomination by religious bodies was abandoned.[^1]

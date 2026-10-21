@@ -1,7 +1,7 @@
 ---
 title: "The Battle of Bear River"
 order: 80
-part: Chapter 8
+part: Chapter 5
 ---
 
 FOR A time after the siege at Lemhi River, the Bannock apparently were on friendly terms with the United States troops at Camp Scott. Captain Jesse Gove wrote his wife in May, 1858, that a large camp of Bannock was established near the fort. The chiefs called to pay their respects to Colonel Johnston, and the soldiers returned the compliment by visiting the Indian village. Gove said, "They are fine looking Indians and said to be the best in the mountains."[^1] At about the same time, Captain J. H. Simpson was encountering Bannock west of Salt Lake City and was receiving an entirely different impression, recording that they were of "a very thievish, treacherous character."[^2]

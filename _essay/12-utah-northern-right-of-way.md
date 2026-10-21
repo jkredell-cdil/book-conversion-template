@@ -1,7 +1,7 @@
 ---
 title: "The Utah Northern Railroad Right of Way"
 order: 120
-part: Chapter 12
+part: Chapter 9
 ---
 
 W HILE Bannock warriors were engaging United States troops on the field of battle, an arm of the civ.ilization they were fighting was reaching out to provide means for bringing still more white people into their homeland. General George Crook, on July 27, 1878, wrote that the terminus of the new Utah Northern Railroad was then at Oneida, Idaho, 127 miles north of Ogden, Utah, and only 42 miles from Ross Fork Agency on the reservation.[^1] This road was being projected from Ogden northward to connect Salt Lake City and the Utah settlements with the Montana mining area and the northern transcontinental lines. Under an act of Congress, March 3, 1873, the Utah Northern Railroad Company, a firm composed mostly of Utah promoters, had been granted a right of way through the public lands of the United States. The route was to be by way of Bear River Valley, Soda Springs, the Snake River Valley, and thence through Montana Territory to a connection with the Northern Pacific Railroad. In addition to the right of way, the Utah Northern was allowed "all necessary ground, not to exceed 20 acres for each ten miles in length of the main line" for station buildings, machine shops, switches, side tracks, et cetera. This projected route did not affect the Fort Hall Reservation.[^2]

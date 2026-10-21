@@ -1,7 +1,7 @@
 ---
 title: "The Bannock War of 1878"
 order: 110
-part: Chapter 11
+part: Chapter 8
 ---
 
 W HEN the Bannock returned from the winter hunt, early in 1877, an event outside their realm forced a change in their routine of subsistence activities. Chief Joseph and his Nez Perce, aggrieved and harassed, took to the warpath in the summer of that year. To prevent sympathetic allies from joining the hostiles, the Office of Indian Affairs took steps to keep all neighboring Indians within the shelter of their reservations. Throughout the year, therefore, the Bannock were forced to remain at Fort Hall under government protection and to accept the scant rations given them. The war hysteria started by the Nez Perce spread to the Bannock at Fort Hall and built up in intensity under the close and unaccustomed restraint of enforced reservation life.[^1]

@@ -1,7 +1,7 @@
 ---
 title: "Fur Trade Era"
 order: 50
-part: Chapter 5
+part: Chapter 2
 ---
 
 THE first mention of the Bannock in recorded history may have been made by Meriwether Lewis, in his journal for August 20, 1805.[^1] At the time, the Lewis and Clark expedition was encamped in the Salmon River area near a group of Shoshoni. There, an old man of the tribe warned Captain Clark that it would be dangerous to travel to the south because that area was held by a fierce and warlike people called the "broken mockersons or mockersons with holes." From the description of the country inhabited by these Broken Moccasins, Hodge concluded that they were the Bannock.[^2] Another writer, however, once questioned Chief Tendoy of the Lemhi Indians concerning the identity of the Broken Moccasins.3 The chief said they were not the Bannock but a mythical race that had been destroyed many years ago by a huge flood that had inundated their land. There is, thus, considerable doubt that Lewis and Clark ever learned of the existence of the Bannock or that these Indians were identical with the Broken Moccasins.

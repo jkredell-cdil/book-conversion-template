@@ -1,7 +1,7 @@
 ---
 title: "Overland Travelers"
 order: 60
-part: Chapter 6
+part: Chapter 3
 ---
 
 AS THE decade of the 1840's approached, interests other than trapping began to draw Americans to and through the Rocky Mountains. The founding of Indian missions in Oregon broug~t some of the first permanent settlers to that region, and a significant indication that the fur trade era was nearing an end came with startling suddenness when white women began to appear on the overland trail to Oregon. Mary Richardson Walker was among the first to travel through the Snake River area, and her diary suggests a very early fear of the Bannock on the part of emigrants. On July 21, 1838, she recorded that the approach of ten lodges of Bannock caused keen apprehension among the members of the expedition. She described the Indians as "more savage than any we have seen in their appearance."[^1] The following year Asahel Munger and his wife met a large camp of "Ponack Indians" at Fort Hall and noted, "They are said to be very bad Indians."2

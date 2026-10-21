@@ -1,7 +1,7 @@
 ---
 title: "Land Cessions and Allotments"
 order: 140
-part: Chapter 14
+part: Chapter 11
 ---
 
 THE legal maneuverings of the 1880's and 1890's over hunting rights and the railroad right of way were not the only problems which involved the Bannock and Shoshoni in negotiations with federal authorities. The governmental promise to grant individual allotments of farming land required a long and tedious procedure of councils and congressional legislation before the Indian farms became realities. A parallel process was th~ gradual whittling down of the reservation as the Indians turned from hunting to farming, and as the clamor of whites for reservation lands reached the ears of officials in Washington.
