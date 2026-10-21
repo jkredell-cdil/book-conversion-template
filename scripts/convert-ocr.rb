@@ -48,13 +48,18 @@ END_PAGE = CONFIG.fetch('end_page')
 SKIP_PAGES = CONFIG.fetch('skip_pages', [])
 
 # running header with an optional page number and separator glyph on either side
-HEADER = /(?:^|\A)\s*(?:[\dIlOo ]{1,5}\s*[•·■�]\s*)?(?:#{RUNNING_HEADER.source})(?:\s*[•·■�]\s*[\dIlOo ]{1,6}(?=\s|$))?\s*/
+HEADER = /(?:^|\A)\s*(?:[\dIlOo ]{1,5}\s*[•·■�]?\s*)?(?:#{RUNNING_HEADER.source})(?:\s*[•·■�]\s*[\dIlOo ]{1,6}(?=\s|$))?\s*/
 
 TEXT_FIXES = CONFIG.fetch('text_fixes', []).map { |f| [Regexp.new(f.fetch('find')), f.fetch('replace')] }
 SECTIONS = CONFIG['quoted_sections']
 SECTION_RE = SECTIONS && Regexp.new(SECTIONS.fetch('pattern'))
 SOURCE_RE = SECTIONS && SECTIONS['source_label'] && /\s*#{Regexp.escape(SECTIONS['source_label'])}\s*/
 READING_LIST_RE = CONFIG['reading_list_pattern'] && Regexp.new(CONFIG['reading_list_pattern'])
+
+# letters and digits only, for matching a chapter title against OCR lines
+def norm_title(s)
+  s.downcase.gsub(/[^a-z0-9]/, '')
+end
 
 def garbage?(line)
   return true if line =~ /^Figure \d+\./
@@ -186,13 +191,31 @@ CHAPTERS.each_with_index do |ch, ci|
     next if SKIP_PAGES.include?(pno)
     lines = line_mode?(pages[pno - 1]) ? layout_paragraphs(layout_pages[pno - 1]) : pages[pno - 1].lines.map(&:strip)
     if pno == first
-      lines.shift while lines.any? && lines[0].empty?
-      lines.shift # chapter number glyph
-      lines.shift while lines.any? && (lines[0].empty? || (lines[0].length < 100 && lines[0] !~ /[.?!"”]\z/))
+      # drop everything through the printed title when it can be found (it may span several lines)
+      want = norm_title(title)
+      acc = ''
+      ti = lines.first(25).index { |l| (acc += norm_title(l)).include?(want) } unless want.empty?
+      if ti
+        # keep any body text that layout reflow merged onto the title line
+        title_re = Regexp.new(want.chars.map { |c| Regexp.escape(c) }.join('[^a-z0-9]*'), Regexp::IGNORECASE)
+        rest = lines[ti] =~ title_re ? $'.strip : ''
+        lines.shift(ti + 1)
+        lines.unshift(rest) unless rest.empty?
+        # rest of a longer all-caps printed heading
+        lines.shift while lines.any? && (lines[0].empty? || lines[0] !~ /[a-z]/)
+      else
+        lines.shift while lines.any? && lines[0].empty?
+        lines.shift # chapter number glyph
+        lines.shift while lines.any? && (lines[0].empty? || lines[0] !~ /[a-z]/ || (lines[0].length < 100 && lines[0] !~ /[.?!"”]\z/))
+      end
+      lines.reject!(&:empty?)
     else
-      2.times do |k|
-        next unless lines[k] && lines[k] =~ RUNNING_HEADER
-        lines[k] = lines[k].sub(HEADER, '')
+      lines.reject!(&:empty?)
+      # header and page number may share a line or sit on separate lines, in either order
+      3.times do |k|
+        next unless lines[k]
+        lines[k] = lines[k].sub(HEADER, '') if lines[k] =~ RUNNING_HEADER
+        lines[k] = '' if lines[k] =~ /\A[\dIlO~]{1,3}\z/
       end
     end
     lines.reject!(&:empty?)
