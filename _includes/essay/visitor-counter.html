@@ -1,7 +1,8 @@
 {%- comment -%}
 Late-1990s style hit counter for the homepage.
 Toggle with `show-visitor-counter` in _data/theme.yml.
-Counts are stored by the free counterapi.dev service, since a static site has no server.
+Counts are stored by the free Abacus counter service (abacus.jasoncameron.dev),
+since a static site has no server.
 The namespace is derived from the site title so each site gets its own count.
 {%- endcomment -%}
 {%- assign counter_namespace = site.title | slugify | default: "cb-essay" -%}
@@ -27,11 +28,12 @@ The namespace is derived from the site title so each site gets its own count.
     // only count once per browser session so reloads don't inflate the number
     var seen = false;
     try { seen = sessionStorage.getItem("retro-counter-seen") === "1"; } catch (e) {}
-    var url = "https://api.counterapi.dev/v1/" + ns + "/homepage" + (seen ? "/" : "/up");
+    // "hit" increments and returns the new count; "get" only reads it
+    var url = "https://abacus.jasoncameron.dev/" + (seen ? "get/" : "hit/") + ns + "/homepage";
     fetch(url)
         .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
         .then(function (data) {
-            render(data.count || 0);
+            render(data.value || 0);
             try { sessionStorage.setItem("retro-counter-seen", "1"); } catch (e) {}
         })
         .catch(function () { /* leave the 000000 placeholder */ });
