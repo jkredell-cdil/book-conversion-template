@@ -3,4 +3,31 @@
     This allows you to override any CollectionBuilder or Bootstrap CSS without modifying the base theme files directly.
 */
 
+/* Retro 1990s homepage hit counter (_includes/essay/visitor-counter.html) */
+.retro-counter-wrap {
+    font-family: "Courier New", Courier, monospace;
+}
+.retro-counter-label {
+    font-size: 0.8rem;
+    margin: 0.4rem 0;
+}
+.retro-counter {
+    display: inline-flex;
+    gap: 2px;
+    padding: 4px;
+    background: #000;
+    border: 3px outset #c0c0c0;
+}
+.retro-digit {
+    display: inline-block;
+    width: 1.4em;
+    padding: 0.1em 0;
+    font-size: 1.6rem;
+    font-weight: bold;
+    line-height: 1.2;
+    color: #39ff14;
+    background: linear-gradient(#111 0 48%, #000 52% 100%);
+    text-shadow: 0 0 6px #39ff14;
+    border: 1px solid #333;
+}
 

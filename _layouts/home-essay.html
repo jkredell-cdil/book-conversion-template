@@ -554,3 +554,7 @@ Only show if multiple essays exist
     </div>
 </div>
 {%- endif -%}
+
+{%- if site.data.theme.show-visitor-counter -%}
+{% include essay/visitor-counter.html %}
+{%- endif -%}

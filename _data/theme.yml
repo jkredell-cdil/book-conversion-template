@@ -34,6 +34,8 @@ show-homepage-toc: true
 # true == homepage displays a table of contents listing all essays
 show-section-nav: true
 # true ==  essay pages show a fixed floating sidebar (on wide screens)
+show-visitor-counter: true
+# true == homepage shows a retro 1990s-style hit counter at the bottom
 keyboard-essay-nav: true
 # true == left/right arrow keys navigate between essay chapters
 #         (automatically disabled when a gallery or modal is open)

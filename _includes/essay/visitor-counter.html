@@ -1,0 +1,39 @@
+{%- comment -%}
+Late-1990s style hit counter for the homepage.
+Toggle with `show-visitor-counter` in _data/theme.yml.
+Counts are stored by the free counterapi.dev service, since a static site has no server.
+The namespace is derived from the site title so each site gets its own count.
+{%- endcomment -%}
+{%- assign counter_namespace = site.title | slugify | default: "cb-essay" -%}
+<div class="retro-counter-wrap text-center py-4">
+    <div class="retro-counter-label">You are visitor number</div>
+    <div class="retro-counter" id="retro-counter" data-namespace="{{ counter_namespace }}" aria-live="polite">
+        <span class="retro-digit">0</span><span class="retro-digit">0</span><span class="retro-digit">0</span><span class="retro-digit">0</span><span class="retro-digit">0</span><span class="retro-digit">0</span>
+    </div>
+    <div class="retro-counter-label">since 1997 &middot; best viewed in Netscape Navigator at 800&times;600</div>
+</div>
+<script>
+(function () {
+    var el = document.getElementById("retro-counter");
+    if (!el) return;
+    var ns = el.dataset.namespace;
+    var render = function (n) {
+        var digits = String(n).padStart(6, "0").split("");
+        el.innerHTML = digits.map(function (d) {
+            return '<span class="retro-digit">' + d + '</span>';
+        }).join("");
+        el.setAttribute("aria-label", "Visitor number " + n);
+    };
+    // only count once per browser session so reloads don't inflate the number
+    var seen = false;
+    try { seen = sessionStorage.getItem("retro-counter-seen") === "1"; } catch (e) {}
+    var url = "https://api.counterapi.dev/v1/" + ns + "/homepage" + (seen ? "/" : "/up");
+    fetch(url)
+        .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
+        .then(function (data) {
+            render(data.count || 0);
+            try { sessionStorage.setItem("retro-counter-seen", "1"); } catch (e) {}
+        })
+        .catch(function () { /* leave the 000000 placeholder */ });
+})();
+</script>
